@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Slice & Code - Premium Pizza Delivery. Order delicious handcrafted pizzas online.">
+    <meta name="keywords" content="pizza, delivery, food, order online, restaurant">
+    <meta name="author" content="Slice & Code">
+    
+    <title>Slice & Code - Premium Pizza Delivery</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍕</text></svg>">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif']
+                    },
+                    colors: {
+                        flipkart: {
+                            blue: '#2874f0',
+                            yellow: '#ffe500'
+                        },
+                        pizza: {
+                            orange: '#ff6b35',
+                            red: '#e63946'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins bg-gray-100 text-gray-800 antialiased">
+    <!-- React Root -->
+    <div id="root">
+        <!-- Loading Screen (shown while React loads) -->
+        <div class="loading-screen">
+            <div class="loader"></div>
+            <p>Loading Slice & Code...</p>
+        </div>
+    </div>
+
+    <!-- React & ReactDOM (Production) -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    
+    <!-- Babel for JSX Transpilation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- SweetAlert2 for Modals & Toasts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- 
+    ============================================
+    JSX FILES (Load Order Matters!)
+    ============================================
+    These files are loaded in a specific order to ensure
+    dependencies are available when needed:
+    
+    1. config.jsx   - Constants & Configuration
+    2. utils.jsx    - Utility Functions
+    3. models.jsx   - Data Models (depends on utils)
+    4. contexts.jsx - React Contexts (depends on models)
+    5. components.jsx - UI Components (depends on contexts)
+    6. pages.jsx    - Page Components (depends on components)
+    7. App.jsx      - Main App (depends on all above)
+    ============================================
+    -->
+    
+    <!-- 1. Configuration -->
+    <script type="text/babel" src="jsx/config.jsx"></script>
+    
+    <!-- 2. Utilities -->
+    <script type="text/babel" src="jsx/utils.jsx"></script>
+    
+    <!-- 3. Data Models -->
+    <script type="text/babel" src="jsx/models.jsx"></script>
+    
+    <!-- 4. React Contexts -->
+    <script type="text/babel" src="jsx/contexts.jsx"></script>
+    
+    <!-- 5. React Components -->
+    <script type="text/babel" src="jsx/components.jsx"></script>
+    
+    <!-- 6. Page Components -->
+    <script type="text/babel" src="jsx/pages.jsx"></script>
+    
+    <!-- 7. Main App -->
+    <script type="text/babel" src="jsx/App.jsx"></script>
+</body>
+</html>
